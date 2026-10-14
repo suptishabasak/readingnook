@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find your next favourite book at The Reading Nook, a cosy corner for curious readers.">
+  <title>The Reading Nook — Find Your Next Read</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a href="#home" class="logo" aria-label="The Reading Nook home"><span class="logo-icon">❧</span> The Reading Nook</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#collection">Collection</a>
+      <a href="#about">Our Story</a>
+      <button class="nav-favourites" id="showFavourites">♡ Favourites <span id="favouriteCount">0</span></button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <span class="eyebrow">A LITTLE CORNER FOR BIG IMAGINATIONS</span>
+        <h1>Between the pages,<br>find a <em>little magic.</em></h1>
+        <p>Stories to get lost in, characters to fall in love with, and worlds waiting to be discovered. Your next favourite book is right around the corner.</p>
+        <a href="#collection" class="primary-button">Explore the collection ↗</a>
+        <div class="hero-note">☕ Make yourself comfy. Stay a while.</div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1000&q=85" alt="A stack of books ready to be explored">
+        <div class="image-caption"><span>YOUR NEXT CHAPTER</span><strong>starts here.</strong></div>
+      </div>
+      <span class="decor decor-one">✳</span><span class="decor decor-two">✿</span>
+    </section>
+
+    <section class="welcome-strip">
+      <span>READ SLOWLY</span><span class="strip-dot">✳</span><span>FEEL EVERYTHING</span><span class="strip-dot">✳</span><span>STAY CURIOUS</span>
+    </section>
+    <section class="carousel-section section-padding" id="picks" aria-roledescription="carousel" aria-label="Staff picks">
+  <span class="eyebrow">STAFF PICKS</span>
+  <h2 class="carousel-title">Books we <em>can't stop</em> recommending.</h2>
+
+  <div class="carousel">
+    <button class="carousel-btn" id="carouselPrev" aria-label="Previous book">‹</button>
+    <div class="carousel-viewport">
+      <div class="carousel-track" id="carouselTrack"></div>
+    </div>
+    <button class="carousel-btn" id="carouselNext" aria-label="Next book">›</button>
+  </div>
+
+  <div class="carousel-controls">
+    <div class="carousel-dots" id="carouselDots"></div>
+    <button class="text-button" id="carouselPause" aria-pressed="false">❚❚ Pause</button>
+  </div>
+</section>
+    <section class="collection section-padding" id="collection">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">THE BOOKSHELF</span>
+          <h2>Find your next <em>favourite.</em></h2>
+          <p>A handpicked little collection for every kind of mood.</p>
+        </div>
+        <button class="surprise-button" id="surpriseMe">✨ Surprise me</button>
+      </div>
+      <div class="collection-tools">
+        <label class="search-box"><span aria-hidden="true">⌕</span><input type="search" id="searchInput" placeholder="Search books or authors..." aria-label="Search books or authors"></label>
+        <div class="filters" id="genreFilters" aria-label="Filter by genre">
+          <button class="filter-button active" data-genre="All">All books</button>
+          <button class="filter-button" data-genre="Fiction">Fiction</button>
+          <button class="filter-button" data-genre="Fantasy">Fantasy</button>
+          <button class="filter-button" data-genre="Mystery">Mystery</button>
+          <button class="filter-button" data-genre="Classics">Classics</button>
+        </div>
+      </div>
+      <p class="results-message" id="resultsMessage" aria-live="polite"></p>
+      <div class="book-grid" id="bookGrid"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <span>📚</span><h3>No books found just yet.</h3><p>Try another title, author, or genre.</p>
+        <button class="text-button" id="resetSearch">Show all books ↗</button>
+      </div>
+    </section>
+
+    <section class="quote-section" id="about">
+      <span class="quote-mark">“</span>
+      <blockquote>A room without books is like a body without a soul.</blockquote>
+      <p>— A little reminder of why we read</p><span class="quote-decoration">✳</span>
+    </section>
+
+    <section class="about-section section-padding">
+      <div class="about-image"><img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=85" alt="A peaceful library lined with bookshelves"></div>
+      <div class="about-content">
+        <span class="eyebrow">A NOTE FROM US</span>
+        <h2>For the love of <em>getting lost.</em></h2>
+        <p>The Reading Nook is a small celebration of stories and the people who love them. Whether you're a lifelong reader or just beginning, there's always room for one more book.</p>
+        <p>Browse at your own pace, follow your curiosity, and let your next great story find you.</p>
+        <a href="#collection" class="text-button">Find your next read ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a href="#home" class="logo footer-logo">❧ The Reading Nook</a>
+    <p>Made with ♡ and a little too much coffee.</p>
+    <span>© <span id="currentYear"></span> The Reading Nook</span>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
